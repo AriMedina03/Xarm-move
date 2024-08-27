@@ -10,26 +10,11 @@ def socket_connection(data, conn, addr):
   
   try:
     print(f"Conexión establecida desde {addr}")
-      #check if the data hasn't changed in 5 iterations
-      # for i in range(5):
-      #   if i == 0:
-      #     prev_message = data
-      #   else:
-      #     if data == prev_message:
-      #       continue
-      #     else:
-      #       prev_message = data
-      #       break
-      #manda el mensaje al servidor
+    
     conn.send(data.encode())
   except:
     print('No se pudo mandar mensaje al cliente')
 
-  # si solo vamos a mandar un mensaje, en realidad no necesitamos recibir pero este sería el código
-    # message = s.recv(1024).decode()
-    # prev_message = message
-    # print(message)
-    # print(prev_message)
 
 class Direction(Enum):  
   UP = 1
